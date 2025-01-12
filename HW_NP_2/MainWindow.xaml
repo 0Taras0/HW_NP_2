@@ -1,0 +1,31 @@
+﻿<Window x:Class="HW_NP_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW_NP_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800" Style="{StaticResource DefaultWindowStyle}">
+    <Viewbox Margin="10">
+        <Border Style="{StaticResource BorderStyle}">
+            <StackPanel Orientation="Vertical" Margin="20">
+                <TextBlock Text="Надіслати фото на сервер" Style="{StaticResource MainTextBlock}"/>
+                <Grid VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+                        <TextBlock x:Name="FileNameTextBlock" Text="Файл:" TextAlignment="Center" Style="{StaticResource DefaultTextBlock}"/>
+                        <TextBox x:Name="FileNameTextBox" Style="{StaticResource TextBoxStyle}"/>
+                        <Button x:Name="SelectImageButton" Content="Вибрати зображення" Click="SelectImageButton_Click" Style="{StaticResource ButtonStyle}"/>
+                        <Button x:Name="UploadButton" Content="Завантажити" Width="200" Click="UploadButton_Click" IsEnabled="False" Style="{StaticResource ButtonStyle}"/>
+                    </StackPanel>
+                    <Border Grid.Row="1" Style="{StaticResource BorderStyle}" MaxWidth="200" MaxHeight="200">
+                        <Image x:Name="UploadedImage" Source="/image.jpg" Margin="5"></Image> <!--Чомусь в атрибут Source не можна вставити шлях до фото яке зберігається в папці--> 
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Viewbox>
+</Window>
